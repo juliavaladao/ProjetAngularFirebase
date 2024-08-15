@@ -1,130 +1,99 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Currículo
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+
 
 <ion-content [fullscreen]="true">
+ 
+  <!-- Header -->
+    <ion-row>
+      <ion-col size="8" size-lg="3">
+       <img src="{{this.perfil.foto}}" alt="imgPerfil">
+      </ion-col>
+  
+      <ion-col size="12" size-lg="8">
+  
+          <ion-item>
+            <h1>{{this.perfil.nome}}</h1>
+          </ion-item>
+          <ion-item>
+            <h4>{{this.perfil.user}}</h4>
+          </ion-item>
+          <ion-item>
+            <h4>{{this.perfil.profissao}}</h4>
+          </ion-item>
+          <ion-item>
+            <h4>{{this.perfil.idioma}}</h4>
+          </ion-item>
+          <ion-item>
+            <h4>{{this.perfil.cidade}}</h4>
+          </ion-item>
+          <ion-item>
+            <h4>{{this.perfil.desde}}</h4>
+          </ion-item>
 
-  <ion-row class="ion-justify-content-center">
-    <ion-col size="12" size-lg="8" size-xl="6">
-
-      <!-- CABEÇALHO -->
-      <ion-row>
-        <ion-col size="12" size-lg="4">
-          <img src="{{this.pessoa.foto}}" class="imgPerfil">
-        </ion-col>
-        <ion-col size="12" size-lg="8">
-          <h2 class="titleNome" style="color: cadetblue;">{{this.pessoa.nome}}</h2>
-          <h3 class="func">{{this.pessoa.objetivo}}</h3>
-        </ion-col>
-      </ion-row>
-      
-      <!-- INFO CONTATO -->
-      <ion-row>
-        <ion-col size="4">
-          <ion-item-divider></ion-item-divider>
-        </ion-col>
-      
-        <ion-col size="4" class="ion-text-center">
-          <h3  style="color: cadetblue;">CONTATO</h3>
-        </ion-col>      
-      
-        <ion-col size="4">
-          <ion-item-divider></ion-item-divider>
-        </ion-col>
-      </ion-row>
-
-      <!-- DADOS CONTATO -->
-      <ion-row>
-        <ion-col size="12">
-          <ion-card>
-
-            
-            <ion-item>
-              <ion-icon slot="start" color="primary" name="mail-outline"></ion-icon>
-              <ion-label>E-mail: {{this.pessoa.contato.email}}</ion-label>
-            </ion-item>
-            <ion-item>
-              <ion-icon slot="start" color="primary" name="call-outline"></ion-icon>
-              <ion-label>Telefone: {{this.pessoa.contato.telefone}}</ion-label>
-            </ion-item>
-            <ion-item>
-              <ion-icon slot="start" color="primary" name="logo-linkedin"></ion-icon>
-              <ion-label>LinkedIn: {{this.pessoa.contato.linkedin}}</ion-label>
-            </ion-item>
-          </ion-card>
-        </ion-col>
-      </ion-row>
-      
-      <!-- INFO SOFT SKILLS -->
-      <ion-row>
-        <ion-col size="4">
-          <ion-item-divider></ion-item-divider>
-        </ion-col>
-        
-        <ion-col size="4" class="ion-text-center">
-          <h3  style="color: cadetblue;">SOFT SKILLS</h3>
-        </ion-col>      
-        
-        <ion-col size="4">
-          <ion-item-divider></ion-item-divider>
-        </ion-col>
-      </ion-row>
-      
-      <!-- SOFT SKILLS -->
-      <ion-row>
-        <ion-col size="12">
-          <ion-card>
-            <ng-container *ngFor="let softskill of this.pessoa.softskill">
-      
-              <ion-item>
-                <ion-label>{{softskill}}</ion-label>
-              </ion-item>
-
-            </ng-container>
-
-          </ion-card>
-        </ion-col>
-      </ion-row>
-
-      <!-- INFO FORMACAO -->
-      <ion-row>
-        <ion-col size="4">
-          <ion-item-divider></ion-item-divider>
-        </ion-col>
-        
-        <ion-col size="4" class="ion-text-center">
-          <h3  style="color: cadetblue;">FORMAÇÃO</h3>
-        </ion-col>      
-        
-        <ion-col size="4">
-          <ion-item-divider></ion-item-divider>
-        </ion-col>
-      </ion-row>
-
-      <!-- FORMACAO -->
-      <ion-row>
-        <ion-col size="12">
-          <ion-card>
-            <ng-container *ngFor="let formacao of this.pessoa.formacao">
-      
-              <ion-item>
-                <ion-label>
-                  <h2>Inicio: {{formacao.ano_inicio}} - {{formacao.ano_termino}} | {{formacao.instituicao}}</h2>
-                  <p>{{ formacao.curso }}</p>
-                </ion-label>
-              </ion-item>
-
-            </ng-container>
-
-          </ion-card>
-        </ion-col>
-      </ion-row>
-
+      </ion-col>
+    </ion-row>
+  
+  <!-- Biografia -->
+   <ion-row size="4">
+    <h3>Biografia</h3>
+   </ion-row>
+   <ion-row>
+    <ion-col>
+      <p>{{this.perfil.bio}}</p>
     </ion-col>
+   </ion-row>
+  
+  <!-- Info --> 
+   <ion-row>
+    <ion-col>
+      <ion-card>
+        <ion-item>
+          {{this.perfil.metricas.curtidas}}
+        </ion-item>
+        <ion-item>
+          <h4>Curtidas</h4>
+        </ion-item>
+      </ion-card>
+    </ion-col>
+    <ion-col>
+      <ion-card>
+        <ion-item>
+          {{this.perfil.metricas.seguidores}}
+        </ion-item>
+        <ion-item>
+          <h4>Seguidores</h4>
+        </ion-item>
+      </ion-card>
+    </ion-col>
+    <ion-col>
+      <ion-card>
+        <ion-item>
+          {{this.perfil.metricas.amigos}}
+        </ion-item>
+        <ion-item>
+          <h4>Seguindo</h4>
+        </ion-item>
+      </ion-card>
+    </ion-col>
+   </ion-row>
+  
+  <!-- Amigos --> 
+  <ng-container *ngFor="let postAmgs of this.perfil.postAmgs">
+  <ion-row>
+    
+      <ion-col size="2" size-lg="1">
+       <img src="{{postAmgs.img}}" alt=""> 
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <h5>{{postAmgs.nome}} {{postAmgs.user}}</h5>
+        </ion-item>
+        <ion-item>
+          {{postAmgs.post}}
+        </ion-item>
+      </ion-col>
+      
+    
   </ion-row>
-
-</ion-content>
+</ng-container>
+  
+  </ion-content>
