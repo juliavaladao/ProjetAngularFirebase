@@ -4,20 +4,20 @@
  
   <!-- Header -->
     <ion-row>
-      <ion-col size="8" size-lg="3">
-       <img src="{{this.perfil.foto}}" alt="imgPerfil">
+      <ion-col size="5" size-lg="3">
+       <img class="imgperfil" src="{{this.perfil.foto}}" alt="imgPerfil">
       </ion-col>
   
-      <ion-col size="12" size-lg="8">
+      <ion-col size="6" size-lg="8">
   
           <ion-item>
-            <h1>{{this.perfil.nome}}</h1>
-          </ion-item>
-          <ion-item>
-            <h4>{{this.perfil.user}}</h4>
+            <h1 class="nomeperfil">{{this.perfil.nome}}</h1>
           </ion-item>
           <ion-item>
             <h4>{{this.perfil.profissao}}</h4>
+          </ion-item>
+          <ion-item>
+            <h4>{{this.perfil.user}}</h4>
           </ion-item>
           <ion-item>
             <h4>{{this.perfil.idioma}}</h4>
@@ -46,33 +46,39 @@
    <ion-row>
     <ion-col>
       <ion-card>
-        <ion-item>
+        <ion-item class="centro">
           {{this.perfil.metricas.curtidas}}
         </ion-item>
         <ion-item>
-          <h4>Curtidas</h4>
+          <h4 class="centro" >Curtidas</h4>
         </ion-item>
       </ion-card>
     </ion-col>
     <ion-col>
       <ion-card>
-        <ion-item>
+        <ion-item class="centro">
           {{this.perfil.metricas.seguidores}}
         </ion-item>
         <ion-item>
-          <h4>Seguidores</h4>
+          <h4 class="centro">Seguidores</h4>
         </ion-item>
       </ion-card>
     </ion-col>
     <ion-col>
       <ion-card>
-        <ion-item>
+        <ion-item class="centro">
           {{this.perfil.metricas.amigos}}
         </ion-item>
         <ion-item>
-          <h4>Seguindo</h4>
+          <h4 class="centro">Seguindo</h4>
         </ion-item>
       </ion-card>
+    </ion-col>
+   </ion-row>
+
+   <ion-row size="4">
+    <ion-col>
+      <h2>Postagem de Amigos</h2>
     </ion-col>
    </ion-row>
   
@@ -81,7 +87,7 @@
   <ion-row>
     
       <ion-col size="2" size-lg="1">
-       <img src="{{postAmgs.img}}" alt=""> 
+       <img class="imgamgs" src="{{postAmgs.img}}" alt=""> 
       </ion-col>
       <ion-col>
         <ion-item>
@@ -92,7 +98,6 @@
         </ion-item>
       </ion-col>
       
-    
   </ion-row>
 </ng-container>
   

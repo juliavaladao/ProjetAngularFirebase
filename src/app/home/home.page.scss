@@ -2,16 +2,20 @@
     // outline: 1px solid blue;
 }
 
-.imgPerfil {
+.imgperfil {
     border-radius: 16px;
-    outline: 3px solid red;
 }
 
-.titleNome {
-    font-size: 3rem;
-
+.imgamgs {
+    border-radius: 60px;
 }
 
-.fun {
+.centro {
+   
+    justify-content: center;
+}
+
+.nomeperfil {
     font-size: 2rem;
+    font-weight: bold;
 }
