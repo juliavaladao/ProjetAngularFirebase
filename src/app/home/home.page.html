@@ -20,6 +20,24 @@
             <h3>Gênero: {{user.genero}}</h3>
           </ion-label>
         </ion-item>
+
+        <ion-accordion-group>
+          <ng-container *ngFor="let rotina of user.rotinas">
+            <ion-accordion value="{{rotina.dia}}">
+              <ion-item slot="header">
+                <ion-label> {{rotina.dia}} </ion-label>
+              </ion-item>
+              <div class="ion-padding" slot="content">
+                <ng-container *ngFor="let treino of rotina.treinos">
+                  <ion-item color="primary">
+                    <ion-label color="secondary">{{treino}}</ion-label>
+                  </ion-item>
+                </ng-container>
+              </div>
+            </ion-accordion>
+          </ng-container>
+        </ion-accordion-group>
+
       </ng-container>
     </ion-col>
   </ion-row>
@@ -27,6 +45,20 @@
   <!-- Lista de Treinos -->
   <ion-row class="ion-justify-content-center" *ngIf="this.segments == 'treinos'">
     <ion-col size="12" size-lg="5">
+      <ng-container *ngFor="let treino of this.treinos">
+        <ion-card color="secondary">
+          <img alt="" src="{{treino.foto}}" />
+          <ion-card-header>
+            <ion-card-title>{{treino.nome}}</ion-card-title>
+            <ion-card-subtitle>Nvl.{{treino.nivel}}</ion-card-subtitle>
+          </ion-card-header>
+        
+          <ion-card-content>
+            <ion-item color="primary">Séries: {{treino.series}}</ion-item>
+            <ion-item color="primary">Repetições: {{treino.repeticoes}}</ion-item>
+          </ion-card-content>
+        </ion-card>
+      </ng-container>
     </ion-col>
   </ion-row>
 
