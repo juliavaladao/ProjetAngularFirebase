@@ -1,0 +1,29 @@
+.on-mouse {
+    cursor: pointer;
+
+    & h2 { 
+        letter-spacing: none; 
+        transition: all 1s;
+    }
+
+    & h2,
+    & h3 {
+        color: pink;
+        transition: all 0.5s;
+    }
+}
+
+.on-mouse:hover {
+    cursor: pointer;
+
+    & h2 { 
+        letter-spacing: 2px; 
+        transition: all 0.5s;
+    }
+
+    & h2,
+    & h3 {
+        color: orangered;
+        transition: all 1s;
+    }
+}
