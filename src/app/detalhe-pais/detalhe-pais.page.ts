@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class DetalhePaisPage implements OnInit {
 
   codigo: any;
-  pais: any;
+  paises: any;
   
   constructor() { }
 
@@ -19,7 +19,18 @@ export class DetalhePaisPage implements OnInit {
     .then( dados => dados.json() )
     .then( dados => {
       console.log(dados);
-      this.pais = dados;
+      this.paises = dados;
+    } )
+    .catch(erro => {console.log(erro);})
+    .finally(() => {console.log('Finalizado!');})
+  };
+
+  verDetalhes(fronteira: any){
+    fetch(`https://restcountries.com/v3.1/alpha/${fronteira}`)
+    .then( dados => dados.json() )
+    .then( dados => {
+      console.log(dados);
+      this.paises = dados;
     } )
     .catch(erro => {console.log(erro);})
     .finally(() => {console.log('Finalizado!');})

@@ -1,18 +1,87 @@
 <ion-content [fullscreen]="true">
-  <ion-row>
-    <ion-col size="5" size-lg="3">
-     <img class="bandeira" src="{{this.perfil.foto}}">
-    </ion-col>
+  <ng-container *ngFor="let pais of this.paises">
 
-    <ion-col size="6" size-lg="8">
+    <ion-row>
+      <ion-col size="5" size-lg="3">
+       <img class="bandeira" src="{{pais.flags.png}}">
+      </ion-col>
+  
+      <ion-col size="6" size-lg="5">
+        
+        <ion-col>
 
-        <ion-item>
-          <h1 class="nomepais">{{this.name.common}}</h1>
-        </ion-item>
-        <ion-item>
-          <h4>{{this.perfil.profissao}}</h4>
-        </ion-item>
+          <ion-item>
+            <h1 class="nomepais">{{pais.name.common}}</h1>
+          </ion-item>
+          <ion-item>
+            <h4>{{pais.name.official}}</h4>
+          </ion-item>
 
-    </ion-col>
-  </ion-row>
+        </ion-col>
+  
+          <ion-col>
+            <ion-item>
+              <h4> Capital: {{pais.capital}} </h4>
+            </ion-item>
+  
+            <ion-item>
+              <h4> População: {{pais.population}} </h4>
+            </ion-item>
+
+            <ion-item>
+              <h4> Continente: {{pais.continents}} </h4>
+            </ion-item>
+  
+            <ion-item>
+              <h4> Área: {{pais.area}} </h4>
+            </ion-item>
+
+            <ion-item>
+              <h4> Região: {{pais.region}} </h4>
+            </ion-item>
+
+            <ion-item>
+              <h4> Sub-região: {{pais.subregion}} </h4>
+            </ion-item>
+
+          </ion-col>
+
+          <ng-container *ngFor="let fuso of pais.timezones">
+            <h4> {{fuso}} </h4>
+          </ng-container>
+
+        <ng-container *ngIf="pais.independent">
+
+          <ion-col>
+            <ion-item>
+              <h4> {{pais.name.common}} é um pais independente! </h4>
+            </ion-item>
+          </ion-col>
+
+        </ng-container>
+
+        <ng-container *ngIf="!pais.independent">
+
+          <ion-col>
+            <ion-item>
+              <h4> {{pais.name.common}} não é um pais independente! </h4>
+            </ion-item>
+          </ion-col>
+
+        </ng-container>
+  
+        <h3> Veja mais sobre os paises que fazem fronteira: </h3>
+        <ng-container *ngFor="let fronteira of pais.borders">
+          <ion-row>
+
+           <h1 (click)="verDetalhes(fronteira)"> {{fronteira}} </h1>
+
+          </ion-row>
+        </ng-container>
+
+      </ion-col>
+    </ion-row>
+
+  </ng-container>
+
 </ion-content>
