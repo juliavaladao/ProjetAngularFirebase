@@ -3,6 +3,7 @@ import { AuthenticateService } from '../services/auth.service';
 import { CrudService } from '../services/crud.service';
 import { Storage, getDownloadURL, ref, uploadBytesResumable } from '@angular/fire/storage';
 import { MessageService } from '../services/message.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -15,7 +16,9 @@ export class HomePage {
   paises: any;
   isLoading: boolean = false;
 
-  constructor(){
+  constructor(
+    private router : Router
+  ){
     this.getPaisCode();
   }
 
@@ -32,6 +35,12 @@ export class HomePage {
     })
     .finally(() => {
       this.isLoading = false;
+    })
+  }
+
+  verDetalhes(ccn3: string){
+    this.router.navigate(['/detalhe-pais'], {
+      state: { codigo: ccn3 }
     })
   }
 
