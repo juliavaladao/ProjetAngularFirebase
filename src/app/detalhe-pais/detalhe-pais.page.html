@@ -10,11 +10,11 @@
         
         <ion-col>
 
-          <ion-item>
+          <ion-item class="on-mouse">
             <h1 class="nomepais">{{pais.name.common}}</h1>
           </ion-item>
-          <ion-item>
-            <h4>{{pais.name.official}}</h4>
+          <ion-item class="on-mouse">
+            <h2>{{pais.name.official}}</h2>
           </ion-item>
 
         </ion-col>
@@ -33,7 +33,7 @@
             </ion-item>
   
             <ion-item>
-              <h4> Área: {{pais.area}} </h4>
+              <h4> Área: {{pais.area}}m² </h4>
             </ion-item>
 
             <ion-item>
@@ -46,6 +46,8 @@
 
           </ion-col>
 
+          <h3> Veja o(s) fuso(s) horário(s) do país: </h3>
+          <br>
           <ng-container *ngFor="let fuso of pais.timezones">
             <h4> {{fuso}} </h4>
           </ng-container>
@@ -72,7 +74,7 @@
   
         <h3> Veja mais sobre os paises que fazem fronteira: </h3>
         <ng-container *ngFor="let fronteira of pais.borders">
-          <ion-row>
+          <ion-row class="mouse-emcima">
 
            <h1 (click)="verDetalhes(fronteira)"> {{fronteira}} </h1>
 
