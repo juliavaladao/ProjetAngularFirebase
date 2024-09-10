@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-item slot="start">
+      <ion-thumbnail>
+        <img src="{{ this.menu.logo }}">
+      </ion-thumbnail>
+    </ion-item>
+
+    <ng-container *ngFor="let item of this.menu.itens">
+
+      <ion-item slot="start" lines="none">
+        <ion-thumbnail slot="start" class="icone">
+          <img src="{{ item.icone }}">
+        </ion-thumbnail>
+        <ion-label> {{ item.texto }} </ion-label>
+      </ion-item>
+
+    </ng-container>
+
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <h1>Content</h1>
+</ion-content>
