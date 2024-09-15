@@ -8,6 +8,7 @@ import { ContatoPageRoutingModule } from './contato-routing.module';
 
 import { ContatoPage } from './contato.page';
 import { HeaderModule } from '../shared/components/header/header.module';
+import { FooterModule } from '../shared/components/footer/footer.module';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { HeaderModule } from '../shared/components/header/header.module';
     FormsModule,
     IonicModule,
     ContatoPageRoutingModule,
-    HeaderModule
+    HeaderModule,
+    FooterModule
   ],
   declarations: [ContatoPage]
 })
