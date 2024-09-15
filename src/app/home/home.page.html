@@ -1,7 +1,32 @@
 <ion-content [fullscreen]="true">
 
-  <app-header>
-    
-  </app-header>
+  <app-header></app-header>
+
+  <ion-img src="https://www.designi.com.br/images/preview/11005102.jpg" class="banner"></ion-img>
+
+  <ion-row>
+    <ion-col class="ion-text-center">
+      <ion-title>
+        <h1> Treinos </h1>
+      </ion-title>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ng-container *ngFor="let tipo of this.treino">
+      <ion-col>
+
+        <ion-col class="ion-text-center">
+          <ion-title> {{tipo.nome}} </ion-title>
+        </ion-col>
+
+        <ion-col>
+          <ion-img src="{{tipo.img1}}" class="galeria"></ion-img>
+          <ion-img src="{{tipo.img2}}" class="galeria"></ion-img>
+        </ion-col>
+
+      </ion-col>
+    </ng-container>
+  </ion-row>
   
   </ion-content>

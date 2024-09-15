@@ -1,4 +1,5 @@
 <ion-header>
+
   <ion-toolbar>
     <ion-item slot="start">
       <ion-thumbnail>
@@ -8,7 +9,7 @@
 
     <ng-container *ngFor="let item of this.menu.itens">
 
-      <ion-item slot="start" lines="none">
+      <ion-item slot="start" lines="none" >
         <ion-thumbnail slot="start" class="icone">
           <img src="{{ item.icone }}">
         </ion-thumbnail>
@@ -18,7 +19,5 @@
     </ng-container>
 
   </ion-toolbar>
+  
 </ion-header>
-<ion-content class="ion-padding">
-  <h1>Content</h1>
-</ion-content>
