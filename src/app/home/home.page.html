@@ -1,34 +1,27 @@
 <ion-content [fullscreen]="true">
 
-  <app-header></app-header>
+  <ion-row class="ion-justify-content-center">
+    <ion-col size="6">
 
-  <app-banner></app-banner>
+      <ion-item>
+        <ion-label>
+          <h1> Login </h1>
+        </ion-label>
+      </ion-item>
 
-  <ion-row>
-    <ion-col class="ion-text-center" id="letra">
-      <ion-title>
-        <h1> Treinos </h1>
-      </ion-title>
+      <ion-item>
+        <ion-input [(ngModel)]="this.user.email" type="email" label="E-mail" placeholder="E-mail"></ion-input>
+      </ion-item>  
+
+      <ion-item>
+        <ion-input [(ngModel)]="this.user.password" type="password" label="Senha" placeholder="*****"></ion-input>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-button (click)="acessar()"> Acessar </ion-button>
+      </ion-item>
+
     </ion-col>
   </ion-row>
 
-  <ion-row>
-    <ng-container *ngFor="let tipo of this.treino">
-      <ion-col>
-
-        <ion-col class="ion-text-center">
-          <ion-title> {{tipo.nome}} </ion-title>
-        </ion-col>
-
-        <ion-col>
-          <ion-img src="{{tipo.img1}}" class="galeria"></ion-img>
-          <ion-img src="{{tipo.img2}}" class="galeria"></ion-img>
-        </ion-col>
-
-      </ion-col>
-    </ng-container>
-  </ion-row>
-
-  <app-footer></app-footer>
-  
   </ion-content>
