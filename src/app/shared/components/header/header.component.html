@@ -9,7 +9,7 @@
 
     <ng-container *ngFor="let item of this.menu.itens">
 
-      <ion-item slot="start" lines="none" >
+      <ion-item slot="start" lines="none" routerLink="{{ item.link }}">
         <ion-thumbnail slot="start" class="icone">
           <img src="{{ item.icone }}">
         </ion-thumbnail>
