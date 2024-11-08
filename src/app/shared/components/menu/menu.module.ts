@@ -12,6 +12,9 @@ import { IonicModule } from '@ionic/angular';
     CommonModule,
     RouterLink,
     IonicModule
+  ],
+  exports : [
+    MenuComponent
   ]
 })
 export class MenuModule { }
