@@ -17,3 +17,28 @@
 .comida{ background-image: url('https://www.guiadasemana.com.br/contentFiles/image/2020/12/FEA/66569_shutterstock-494252905.jpg'); }
 .noel{ background-image: url('https://s2.glbimg.com/OQh8ny0vIFSiPS_D42_BWYAnfcE=/620x455/e.glbimg.com/og/ed/f/original/2019/12/09/papai-noel.jpg'); }
 .familia{ background-image: url('https://th.bing.com/th/id/R.af0d111797bc093feb55e6e5e1929272?rik=D%2fFRiZDZdmEvXQ&riu=http%3a%2f%2fhoroscopovirtual.uol.com.br%2fimagem%2fartigos%2finterno%2fimages%2ffamilia-natal-shutterstock_images(1).jpg&ehk=O%2fuc7llHn8FKqeWyhP9D5cK9CSK0HswSU7jyRO2czK4%3d&risl=&pid=ImgRaw&r=0'); }
+
+h1{
+    font-size: 3.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 45px;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    text-align: justify;
+}
+
+ion-card{
+    border-radius: 10px;
+    outline: 1px solid white;
+}
+
+ion-card img{
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+}

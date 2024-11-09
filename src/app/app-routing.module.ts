@@ -10,6 +10,10 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
+  },
+  {
+    path: 'natal',
+    loadChildren: () => import('./natal/natal.module').then( m => m.NatalPageModule)
   }
 ];
 

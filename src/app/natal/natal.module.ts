@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
-import { HomePage } from './home.page';
 
-import { HomePageRoutingModule } from './home-routing.module';
+import { IonicModule } from '@ionic/angular';
+
+import { NatalPageRoutingModule } from './natal-routing.module';
+
+import { NatalPage } from './natal.page';
 import { MenuModule } from '../shared/components/menu/menu.module';
 import { FooterModule } from '../shared/components/footer/footer.module';
 
@@ -13,10 +15,10 @@ import { FooterModule } from '../shared/components/footer/footer.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule,
+    NatalPageRoutingModule,
     MenuModule,
     FooterModule
   ],
-  declarations: [HomePage]
+  declarations: [NatalPage]
 })
-export class HomePageModule {}
+export class NatalPageModule {}
